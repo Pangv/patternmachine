@@ -1,0 +1,20 @@
+########### Pattern Machine ###########
+
++ Read Data Line by Line
++ Create Objects Line by Line
+
+
+
++++++++++ CONTROLS ++++++++++
+
+
+
+++++++++++ VIEWS +++++++++++
+
+Choose  >> InputFile
+        >> OutputFile
+
+
+Count   >> Browser Type
+        >> Client OSs
+        >> Return Codes

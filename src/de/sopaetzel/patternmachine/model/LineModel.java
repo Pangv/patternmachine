@@ -1,6 +1,6 @@
 package de.sopaetzel.patternmachine.model;
 
-public class Line {
+public class LineModel {
 
     private String ipAdress;
     private String timestamp;
@@ -11,7 +11,7 @@ public class Line {
     private String clientBrowser;
     private String clientOS;
 
-    public Line(String ipAdress, String timestamp, String target, short responseCode, short timeToResponse, String url, String clientBrowser, String clientOS) {
+    public LineModel(String ipAdress, String timestamp, String target, short responseCode, short timeToResponse, String url, String clientBrowser, String clientOS) {
         this.ipAdress = ipAdress;
         this.timestamp = timestamp;
         this.target = target;
