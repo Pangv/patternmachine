@@ -12,8 +12,8 @@ public class LineModel {
     private String clientBrowser;
     private String clientOS;
 
-    public LineModel(Object ipAdress, Object timestamp, Object target, Object responseCode, Object responseSize, Object url, Object clientBrowser, Object clientOS) {
-        this.ipAdress = String.valueOf(ipAdress);
+    public LineModel(Object ipAddress, Object timestamp, Object target, Object responseCode, Object responseSize, Object url, Object clientBrowser, Object clientOS) {
+        this.ipAdress = String.valueOf(ipAddress);
         this.timestamp = String.valueOf(timestamp);
         this.target = String.valueOf(target);
         this.responseCode = new Short(String.valueOf(responseCode));
