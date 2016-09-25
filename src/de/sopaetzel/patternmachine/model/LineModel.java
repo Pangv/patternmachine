@@ -2,23 +2,56 @@ package de.sopaetzel.patternmachine.model;
 
 public class LineModel {
 
+
     private String ipAdress;
     private String timestamp;
     private String target;
     private short responseCode;
-    private short timeToResponse;
+    private short responseSize;
     private String url;
     private String clientBrowser;
     private String clientOS;
 
-    public LineModel(String ipAdress, String timestamp, String target, short responseCode, short timeToResponse, String url, String clientBrowser, String clientOS) {
-        this.ipAdress = ipAdress;
-        this.timestamp = timestamp;
-        this.target = target;
-        this.responseCode = responseCode;
-        this.timeToResponse = timeToResponse;
-        this.url = url;
-        this.clientBrowser = clientBrowser;
-        this.clientOS = clientOS;
+    public LineModel(Object ipAdress, Object timestamp, Object target, Object responseCode, Object responseSize, Object url, Object clientBrowser, Object clientOS) {
+        this.ipAdress = String.valueOf(ipAdress);
+        this.timestamp = String.valueOf(timestamp);
+        this.target = String.valueOf(target);
+        this.responseCode = new Short(String.valueOf(responseCode));
+        this.responseSize = new Short(String.valueOf(responseSize));
+        this.url = String.valueOf(url);
+        this.clientBrowser = String.valueOf(clientBrowser);
+        this.clientOS = String.valueOf(clientOS);
+    }
+
+    public String getIpAdress() {
+        return ipAdress;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public short getResponseCode() {
+        return responseCode;
+    }
+
+    public short getResponseSize() {
+        return responseSize;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getClientBrowser() {
+        return clientBrowser;
+    }
+
+    public String getClientOS() {
+        return clientOS;
     }
 }

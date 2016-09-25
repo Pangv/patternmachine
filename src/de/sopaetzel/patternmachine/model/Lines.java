@@ -4,11 +4,55 @@ import java.util.ArrayList;
 
 public class Lines {
 
-    private static ArrayList<LineModel> allLines = new ArrayList<LineModel>();
+    private ArrayList<LineModel> allLines = new ArrayList<>();
 
-    public void addLine(String ip, String ts, String target, short response, short delay, String url, String browser, String os) {
-        this.allLines.add(new LineModel(ip, ts, target, response, delay, url, browser, os));
+
+    private int countOS() {
+        int toReturn = 0;
+
+
+        return toReturn;
     }
+
+
+    private int countBrowser(String browser) {
+        int toReturn = 0;
+        for (LineModel line : allLines) {
+            if (line.getClientBrowser().contains(browser)) {
+                toReturn++;
+            }
+        }
+        return toReturn;
+
+    }
+
+    private int countTargets(String target) {
+        int toReturn = 0;
+        for (LineModel line : allLines) {
+            if (line.getTarget().contains(target)) {
+                toReturn++;
+            }
+        }
+        return toReturn;
+    }
+
+    public void getBrowserCount(String clientBrowser) {
+        System.out.println("The Browser Count for " + clientBrowser + " is " + countBrowser(clientBrowser));
+    }
+
+    public void getTargetCount(String target) {
+        System.out.println("The Target count for " + target + " is " + countTargets(target));
+    }
+
+    public void addLine(LineModel lineModel) {
+        this.allLines.add(lineModel);
+    }
+
+
+
+
+
+
 
 
 }

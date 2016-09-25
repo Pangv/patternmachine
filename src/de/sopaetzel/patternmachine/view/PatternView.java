@@ -30,8 +30,6 @@ public class PatternView extends JFrame {
         initComponents();
         addComponents();
         initFrame();
-
-
     }
 
     private void initFrame() {
