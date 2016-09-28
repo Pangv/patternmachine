@@ -19,6 +19,7 @@ public class ReadController {
         this.lines = lines;
     }
 
+
     /**
      * Reads all lines one by one into the buffer and applies the pattern
      *
@@ -29,10 +30,16 @@ public class ReadController {
         String line;
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
 
-        while (bufferedReader.readLine() != null) {
-            line = bufferedReader.readLine();
+
+
+        while ((line = bufferedReader.readLine()) != null) {
             applyPattern(line);
         }
+
+//        while (bufferedReader.readLine() != null) { Hier wird readLine ausgeführt aber nichts mit gemacht
+//            line = bufferedReader.readLine(); Hier wirds nochmal gelesen und verwendet
+//            applyPattern(line);
+//        } Damit halbiert sich die Menge aller Zeilen von 552 auf 276
 
     }
 

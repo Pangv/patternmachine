@@ -7,10 +7,13 @@ public class Lines {
     private ArrayList<LineModel> allLines = new ArrayList<>();
 
 
-    private int countOS() {
+    private int countOS(String os) {
         int toReturn = 0;
-
-
+        for (LineModel line : allLines) {
+            if (line.getClientOS().contains(os)) {
+                toReturn++;
+            }
+        }
         return toReturn;
     }
 
@@ -43,16 +46,13 @@ public class Lines {
     public void getTargetCount(String target) {
         System.out.println("The Target count for " + target + " is " + countTargets(target));
     }
+    public void getOSCount(String os){
+        System.out.println("The OS count for " + os + " is " + countOS(os));
+    }
 
     public void addLine(LineModel lineModel) {
         this.allLines.add(lineModel);
     }
-
-
-
-
-
-
 
 
 }

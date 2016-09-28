@@ -1,7 +1,6 @@
 package de.sopaetzel.patternmachine.application;
 
-import de.sopaetzel.patternmachine.controller.ReadController;
-import de.sopaetzel.patternmachine.model.Lines;
+import de.sopaetzel.patternmachine.view.PatternViewC;
 
 import java.io.IOException;
 
@@ -9,31 +8,17 @@ public class App {
 
 
     public static void main(String[] args) {
-
-
-        Lines lines = new Lines();
-
         //   PatternView patternView = new PatternView("Pattern Machine");
-
-
-        ReadController readController = new ReadController(lines);
-
-
+        PatternViewC patternViewC = new PatternViewC();
         try {
-            readController.readLineByLine("./assets/logfile_2016-9-16_2016-9-23.log");
-            System.out.println("Successfully read");
-
-            // Test Output Browser
-            System.out.println("+++BROWSER COUNT+++");
-            lines.getBrowserCount("Chrome");
-            lines.getBrowserCount("Internet");
-            lines.getBrowserCount("Mozilla");
-            lines.getBrowserCount("Opera");
-// Test Output Target
-            lines.getTargetCount("index");
+            while (patternViewC.showMenu() != 99) {
+                patternViewC.showMenu();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println("Successfully read");
 
 
     }
