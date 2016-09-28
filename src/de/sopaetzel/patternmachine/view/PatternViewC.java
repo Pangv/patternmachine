@@ -22,6 +22,8 @@ public class PatternViewC {
         System.out.println("1) Browser Verteilung");
         System.out.println("2) OS Verteilung");
         System.out.println("3) Response Code Häufigkeit");
+        System.out.println("4) Target Häufigkeit");
+        System.out.println("5) Größe aller Responses im Log");
         int item = Integer.parseInt(br.readLine());
         chooseItem(item);
         return item;
@@ -48,7 +50,19 @@ public class PatternViewC {
                 break;
             case 3:
                 System.out.println("Response Code Häufigkeit");
+                lines.getResponseCodeCount((short) 200);
+                lines.getResponseCodeCount((short) 400);
+                lines.getResponseCodeCount((short) 404);
+                lines.getResponseCodeCount((short) 502);
+                lines.getResponseCodeCount((short) 503);
+                break;
+            case 4:
+                System.out.println("Target Häufigkeit");
                 lines.getTargetCount("index");
+                break;
+            case 5:
+                System.out.println("Größe aller Reponses im Log");
+                lines.calcOverAllSize();
                 break;
         }
     }

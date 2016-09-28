@@ -29,18 +29,9 @@ public class ReadController {
     public void readLineByLine(String fileName) throws IOException {
         String line;
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-
-
-
         while ((line = bufferedReader.readLine()) != null) {
             applyPattern(line);
         }
-
-//        while (bufferedReader.readLine() != null) { Hier wird readLine ausgeführt aber nichts mit gemacht
-//            line = bufferedReader.readLine(); Hier wirds nochmal gelesen und verwendet
-//            applyPattern(line);
-//        } Damit halbiert sich die Menge aller Zeilen von 552 auf 276
-
     }
 
     /**
@@ -63,6 +54,9 @@ public class ReadController {
      * @return cleared String or Short value
      */
     private Object clear(String part, Class type) {
+        if (part.equals("")) {
+            return 0;
+        }
         part = part.trim();
         part = part.replace("\"", "");
         part = part.replace("[", "");

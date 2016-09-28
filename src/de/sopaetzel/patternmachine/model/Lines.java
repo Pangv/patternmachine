@@ -39,6 +39,26 @@ public class Lines {
         return toReturn;
     }
 
+    private int countResponseCodes(short code) {
+        int toReturn = 0;
+
+        for (LineModel line : allLines) {
+            if (line.getResponseCode() == code) {
+                toReturn++;
+            }
+        }
+
+        return toReturn;
+    }
+
+    public void calcOverAllSize() {
+        int toReturn = 0;
+        for (LineModel line : allLines) {
+            toReturn += line.getResponseSize();
+        }
+        System.out.println("The size of all responses accumulated is " + toReturn);
+    }
+
     public void getBrowserCount(String clientBrowser) {
         System.out.println("The Browser Count for " + clientBrowser + " is " + countBrowser(clientBrowser));
     }
@@ -48,6 +68,10 @@ public class Lines {
     }
     public void getOSCount(String os){
         System.out.println("The OS count for " + os + " is " + countOS(os));
+    }
+
+    public void getResponseCodeCount(short code) {
+        System.out.println("The Response Code count for " + code + " is " + countResponseCodes(code));
     }
 
     public void addLine(LineModel lineModel) {
